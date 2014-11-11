@@ -1,10 +1,10 @@
 {
-  "name": "chug.js",
+  "name": "chug",
   "version": "0.0.1",
   "description": "Mule Design's very simple build tool",
   "repository": {
     "type": "git",
-    "url": "https://github.com/muledesign/chug.js.git"
+    "url": "https://github.com/muledesign/chug.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
