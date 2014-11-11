@@ -10,8 +10,6 @@
     "grunt": "~0.4.5",
     "grunt-contrib-sass": "~0.8.1",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-mustache-html": "^0.1.7",
-    "load-grunt-config": "^0.16.0",
-    "mustache": "~0.8.2"
+    "grunt-mustache-html": "^0.1.7"
   }
 }
