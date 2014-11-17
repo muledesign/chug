@@ -31,6 +31,9 @@ module.exports = function(grunt) {
     // Compile Sass into CSS
     sass: {
       dist: {
+        options: {
+          style: 'compressed'
+        },
         files: [{
           expand: true,
           cwd: 'src/assets/css',
