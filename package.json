@@ -12,5 +12,8 @@
     "grunt-contrib-sass": "~0.8.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-mustache-html": "^0.1.7"
+  },
+  "dependencies": {
+    "dbushell-grunt-mustatic": "^0.1.1"
   }
 }

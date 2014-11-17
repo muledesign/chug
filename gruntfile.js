@@ -8,15 +8,15 @@ module.exports = function(grunt) {
         files: ['src/assets/css/*.scss'],
         tasks: ['sass']
       },
-      mustache_html: {
+      mustatic: {
         files: [
-          'src/pages/*.mustache', 
+          'src/pages/*.html', 
           'src/pages/*.json',
-          'src/partials/*.mustache',
+          'src/partials/*.html',
           'src/partials/*.json',
-          'src/*.mustache'
+          'src/*.html'
         ],
-        tasks: ['mustache_html']
+        tasks: ['mustatic']
       },
       copy: {
         files: [
@@ -42,11 +42,16 @@ module.exports = function(grunt) {
     },
 
     // Compile mustache templates into flat HTML
-    mustache_html: {
+    mustatic: {
       options: {
         src: 'src',
-        dist: 'build',
-        type: 'mustache'
+        dest: 'build'
+      },
+      prod: {
+        globals: {
+          lang: 'en',
+          charset: 'utf-8'
+        }
       }
     },
 
@@ -80,6 +85,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-mustache-html');
+  grunt.loadNpmTasks('dbushell-grunt-mustatic');
   grunt.loadNpmTasks('grunt-contrib-copy');
 };
