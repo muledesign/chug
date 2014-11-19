@@ -20,9 +20,9 @@ module.exports = function(grunt) {
       },
       copy: {
         files: [
-          'src/assets/img/*',
-          'src/assets/fonts/*',
-          'src/assets/js/*'
+          'src/assets/img/**',
+          'src/assets/fonts/**',
+          'src/assets/js/**'
         ],
         tasks: ['copy']
       }
