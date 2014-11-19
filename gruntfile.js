@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     // Watch for changes; perform relevant task
     watch: {
       sass: {
-        files: ['src/assets/css/*.scss'],
+        files: ['src/assets/css/**'],
         tasks: ['sass']
       },
       mustatic: {
