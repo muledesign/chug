@@ -1,5 +1,4 @@
-Chug
----
+# Chug
 
 Chug is a simple [Grunt](http://gruntjs.com/)-based development tool that will
 build a nice static HTML site for you, based on your many templates and assets.
