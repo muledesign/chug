@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -5,26 +7,18 @@ module.exports = function(grunt) {
     // Watch for changes; perform relevant task
     watch: {
       sass: {
-        files: ['src/assets/css/**'],
+        files: ['assets/scss/**'],
         tasks: ['sass']
       },
       mustatic: {
         files: [
-          'src/pages/*.html', 
-          'src/pages/*.json',
-          'src/partials/*.html',
-          'src/partials/*.json',
-          'src/*.html'
+          'templates/pages/*.mustache', 
+          'templates/pages/*.json',
+          'templates/partials/*.mustache',
+          'templates/partials/*.json',
+          'templates/*.mustache'
         ],
         tasks: ['mustatic']
-      },
-      copy: {
-        files: [
-          'src/assets/img/**',
-          'src/assets/fonts/**',
-          'src/assets/js/**'
-        ],
-        tasks: ['copy']
       }
     },
 
@@ -36,9 +30,9 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'src/assets/css',
+          cwd: 'assets/scss',
           src: ['*.scss'],
-          dest: 'build/assets/css',
+          dest: 'assets/css',
           ext: '.css'
         }]
       }
@@ -47,8 +41,9 @@ module.exports = function(grunt) {
     // Compile mustache templates into flat HTML
     mustatic: {
       options: {
-        src: 'src',
-        dest: 'build'
+        ext: 'mustache',
+        src: 'templates',
+        dest: '.'
       },
       prod: {
         globals: {
@@ -56,38 +51,34 @@ module.exports = function(grunt) {
           charset: 'utf-8'
         }
       }
-    },
+    }
+  });
 
-    // Copy images, fonts, and javascript from src to build
-    copy: {
-      main: {
-        files: [
-          {
-            expand: true,
-            cwd: 'src/assets/img',
-            src: ['**', '**/*'],
-            dest: 'build/assets/img/'
-          },
-          {
-            expand: true,
-            cwd: 'src/assets/fonts',
-            src: ['**', '**/*'],
-            dest: 'build/assets/fonts/'
-          },
-          {
-            expand: true,
-            cwd: 'src/assets/js',
-            src: ['**', '**/*'],
-            dest: 'build/assets/js/'
-          }
-        ]
-      }
+  // Generate directory structure
+  grunt.registerTask("new", function() {
+    createTemplatesDir();
+    createAssetsDir();
+
+    function createTemplatesDir() {
+      fs.mkdirSync("templates");
+      fs.mkdirSync("templates/partials");
+      fs.mkdirSync("templates/pages");
+
+      fs.writeFileSync("templates/base.mustache", "{{>content}}");
     }
 
+    function createAssetsDir() {    
+      fs.mkdirSync("assets");
+      fs.mkdirSync("assets/scss");
+      fs.mkdirSync("assets/css");
+      fs.mkdirSync("assets/img");
+      fs.mkdirSync("assets/js");
+
+      fs.writeFileSync("assets/scss/style.scss", "");
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('dbushell-grunt-mustatic');
-  grunt.loadNpmTasks('grunt-contrib-copy');
 };
