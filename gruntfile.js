@@ -78,6 +78,8 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.registerTask("compile", ['sass', 'mustatic']);
+
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('dbushell-grunt-mustatic');
