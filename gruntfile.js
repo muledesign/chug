@@ -16,7 +16,8 @@ module.exports = function(grunt) {
           'templates/pages/*.json',
           'templates/partials/*.mustache',
           'templates/partials/*.json',
-          'templates/*.mustache'
+          'templates/*.mustache',
+          'templates/*.json'
         ],
         tasks: ['mustatic']
       }
