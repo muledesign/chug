@@ -1,6 +1,6 @@
 {
   "name": "chug",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Mule Design's very simple build tool",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "dependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-contrib-sass": "~0.8.1",
+    "grunt-sass": "^0.17.0",
     "dbushell-grunt-mustatic": "^0.1.1"
   }
 }
