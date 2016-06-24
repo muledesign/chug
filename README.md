@@ -25,3 +25,14 @@ directory. Something like `chug install` and the gruntfile magically appears
 and runs `npm install`. Might also be cool to have `chug` act as an alias for
 Chug's grunt tasks, so you can run `chug watch`.
 * Coffeescript support for people who want it.
+* 
+
+
+
+## Troubleshooting
+### Updating for (newer) Node
+Chug is built around Node 4+. If you're running 6+ you'll need to update some packages to get this running on you machine. Follow these steps to update Sass:
+* Clone the repo
+* Move into your new directory
+* `npm install`
+* `npm rebuild node-sass`
