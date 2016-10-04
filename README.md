@@ -3,7 +3,7 @@
 Chug is a simple [Grunt](http://gruntjs.com/)-based development tool that will
 build a nice static HTML site for you, based on your many templates and assets.
 Chug is a little bit opinionated, and assumes that you are an intelligent and
-attractive person that loves Mustache and Sass.
+attractive person who loves Mustache and Sass.
 
 ## Getting Started
 Put Chug's gruntfile in a directory and run `grunt new` to get your directory
